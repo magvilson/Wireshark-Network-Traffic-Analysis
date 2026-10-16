@@ -31,10 +31,7 @@ Wireshark-Network-Traffic-Analysis/
 ├── captures/
 │   ├── 01-ICMP-Packet-Analysis.pcapng
 │   ├── 02-DNS-Packet-Analysis.pcapng
-│   ├── 03-TCP-Three-Way-Handshake.pcapng
-│   ├── 04-TLS-Server-Hello-Analysis.pcapng
-│   ├── 05-TLS-Encrypted-Application-Data.pcapng
-│   └── 06-TCP-Connection-Termination-Retransmission.pcapng
+│   ├── 03-Shared-TCP-TLS-Analysis.pcapng
 ├── screenshots/
 │   ├── 01-ICMP-Echo-Request-Reply.png
 │   ├── 02-TLS-Client-Hello.png
@@ -45,6 +42,9 @@ Wireshark-Network-Traffic-Analysis/
 ├── .gitignore
 └── README.md
 ```
+
+
+**Evidence note:** Investigations 3–6 analyze different protocol events within the same packet capture. The shared PCAPNG preserves the original network evidence without redundant copies.
 
 ## Investigation 1: ICMP Traffic Analysis
 
