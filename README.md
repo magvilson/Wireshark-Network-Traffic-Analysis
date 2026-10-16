@@ -115,15 +115,16 @@ Wireshark-Network-Traffic-Analysis/
 
 ## Investigation 6: TCP Connection Termination and Retransmission
 
-**Objective:** Investigate TCP session termination and retransmission behavior.
+**Objective:** Analyze TCP connection termination, retransmissions, and reset behavior using captured network traffic.
 
 **Observations:**
-- TCP FIN/ACK packets were observed.
-- Both endpoints participated in connection termination.
-- Wireshark identified a retransmitted FIN/ACK packet.
-- The capture illustrates how retransmissions can occur during connection teardown.
+- Frame 142: `192.168.12.83:57381` sent a TCP FIN/ACK to `104.20.23.154:443`.
+- Frame 143: The remote endpoint responded with a TCP FIN/ACK.
+- Frame 144: Wireshark identified a retransmitted FIN/ACK from the local endpoint.
+- Frames 176–180: A separate TCP connection demonstrated FIN/ACK exchange, retransmission, and a TCP RST.
+- These observations demonstrate TCP connection teardown and retransmission behavior. Further analysis is required to determine the cause of retransmissions.
 
-**Security relevance:** TCP analysis supports troubleshooting network reliability, investigating interrupted sessions, and distinguishing network issues from potentially suspicious traffic patterns.
+**Security relevance:** TCP flag analysis helps SOC analysts investigate interrupted connections, network reliability issues, and potentially suspicious session behavior. Retransmissions and resets alone do not establish malicious activity.
 
 ![TCP Termination](screenshots/06-TCP-Termination-Retransmission.png)
 
