@@ -32,9 +32,9 @@ Wireshark-Network-Traffic-Analysis/
 │   ├── 01-ICMP-Packet-Analysis.pcapng
 │   ├── 02-DNS-Packet-Analysis.pcapng
 │   ├── 03-TCP-Three-Way-Handshake.pcapng
-│   ├── 04-TLS-Server-Hello-Analysis.png.pcapng
-│   ├── 05-TLS-Encrypted-Application-Data.png.pcapng
-│   └── 06-TCP-Connection-Termination-Retransmission.png.pcapng
+│   ├── 04-TLS-Server-Hello-Analysis.pcapng
+│   ├── 05-TLS-Encrypted-Application-Data.pcapng
+│   └── 06-TCP-Connection-Termination-Retransmission.pcapng
 ├── screenshots/
 │   ├── 01-ICMP-Echo-Request-Reply.png
 │   ├── 02-TLS-Client-Hello.png
@@ -94,7 +94,7 @@ Wireshark-Network-Traffic-Analysis/
 
 **Observations:**
 - Change Cipher Spec records were visible during the TLS 1.3 handshake.
-- TLS 1.3 can use compatibility Change Cipher Spec records for interoperability with older network infrastructure.
+- TLS 1.3 may include compatibility Change Cipher Spec records to support interoperability with legacy TLS implementations and middleboxes. These records do not change the negotiated cipher suite or activate encryption.
 
 **Security relevance:** Understanding TLS record types helps distinguish expected protocol behavior from potentially suspicious handshake anomalies.
 
